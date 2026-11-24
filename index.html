@@ -1,0 +1,1012 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EEEP Elsa Maria Porto Costa Lima | Educação Profissional</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #0f3d2e;       /* Verde Institucional Escuro */
+            --primary-light: #196149; /* Verde Médio */
+            --accent: #eab308;        /* Dourado / Amarelo Institucional */
+            --bg-light: #f8fafc;
+            --bg-white: #ffffff;
+            --text-dark: #0f172a;
+            --text-muted: #475569;
+            --border-color: #e2e8f0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+        }
+
+        /* Barra Superior Institucional */
+        .top-bar {
+            background-color: var(--primary);
+            color: #fff;
+            font-size: 0.8rem;
+            padding: 0.5rem 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .top-bar span {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        /* Navegação */
+        header {
+            position: sticky;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.96);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border-color);
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.04);
+            z-index: 1000;
+            padding: 1rem 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+            color: var(--primary);
+        }
+
+        .logo-icon {
+            width: 42px;
+            height: 42px;
+            background: var(--primary);
+            color: var(--accent);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+        }
+
+        .logo-text h1 {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-size: 1.15rem;
+            font-weight: 800;
+            line-height: 1.1;
+            color: var(--primary);
+        }
+
+        .logo-text span {
+            font-size: 0.72rem;
+            font-weight: 600;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+        }
+
+        nav a {
+            color: var(--text-dark);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: color 0.3s;
+            position: relative;
+            padding: 4px 0;
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--primary);
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2.5px;
+            bottom: -4px;
+            left: 0;
+            background-color: var(--accent);
+            transition: width 0.3s;
+        }
+
+        nav a:hover::after, nav a.active::after {
+            width: 100%;
+        }
+
+        .menu-toggle {
+            display: none;
+            font-size: 1.5rem;
+            color: var(--primary);
+            cursor: pointer;
+        }
+
+        /* Estrutura Geral de Sessões */
+        section {
+            padding: 5.5rem 8%;
+        }
+
+        section:nth-child(even) {
+            background-color: var(--bg-white);
+        }
+
+        .section-header {
+            margin-bottom: 3rem;
+        }
+
+        .section-subtitle {
+            color: var(--primary-light);
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            font-size: 0.8rem;
+            margin-bottom: 0.4rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .section-subtitle::before {
+            content: '';
+            width: 24px;
+            height: 2px;
+            background: var(--accent);
+            display: inline-block;
+        }
+
+        .section-title {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-size: 2.2rem;
+            font-weight: 800;
+            color: var(--text-dark);
+        }
+
+        /* Sessão 1: Início / Hero */
+        #inicio {
+            min-height: 88vh;
+            background: linear-gradient(135deg, #f0fdf4 0%, #ffffff 60%, #fefce8 100%);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 4rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .hero-text {
+            flex: 1.1;
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 6px 14px;
+            background: rgba(15, 61, 46, 0.08);
+            color: var(--primary);
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-text h2 {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-size: 3rem;
+            font-weight: 800;
+            line-height: 1.15;
+            color: var(--text-dark);
+            margin-bottom: 1.2rem;
+        }
+
+        .hero-text h2 span {
+            color: var(--primary);
+        }
+
+        .hero-text p {
+            color: var(--text-muted);
+            font-size: 1.05rem;
+            margin-bottom: 2rem;
+            max-width: 580px;
+        }
+
+        .btn-group {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 13px 26px;
+            border-radius: 8px;
+            font-weight: 600;
+            text-decoration: none;
+            font-size: 0.92rem;
+            transition: all 0.25s;
+            cursor: pointer;
+            border: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .btn-primary {
+            background: var(--primary);
+            color: #fff;
+            box-shadow: 0 4px 14px rgba(15, 61, 46, 0.25);
+        }
+
+        .btn-primary:hover {
+            background: var(--primary-light);
+            transform: translateY(-2px);
+        }
+
+        .btn-outline {
+            background: var(--bg-white);
+            color: var(--primary);
+            border: 1.5px solid var(--primary);
+        }
+
+        .btn-outline:hover {
+            background: rgba(15, 61, 46, 0.05);
+        }
+
+        .hero-image {
+            flex: 0.9;
+            position: relative;
+        }
+
+        .hero-image img {
+            width: 100%;
+            border-radius: 16px;
+            box-shadow: 0 20px 40px rgba(15, 23, 42, 0.12);
+            object-fit: cover;
+            aspect-ratio: 4/3;
+        }
+
+        .hero-card-float {
+            position: absolute;
+            bottom: -20px;
+            left: -20px;
+            background: var(--bg-white);
+            padding: 1rem 1.4rem;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            border-left: 4px solid var(--accent);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .hero-card-float i {
+            font-size: 1.6rem;
+            color: var(--primary);
+        }
+
+        /* Sessão 2: A Escola (Sobre) */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.15fr;
+            gap: 3.5rem;
+            align-items: center;
+        }
+
+        .about-img img {
+            width: 100%;
+            border-radius: 14px;
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+            aspect-ratio: 4/3;
+            object-fit: cover;
+        }
+
+        .about-content p {
+            color: var(--text-muted);
+            margin-bottom: 1.2rem;
+            font-size: 1rem;
+        }
+
+        .pillars-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+            margin-top: 1.8rem;
+        }
+
+        .pillar-card {
+            background: var(--bg-light);
+            padding: 1.2rem;
+            border-radius: 10px;
+            border: 1px solid var(--border-color);
+            border-top: 3px solid var(--primary);
+        }
+
+        .pillar-card h4 {
+            color: var(--primary);
+            font-size: 0.95rem;
+            font-weight: 700;
+            margin-bottom: 4px;
+        }
+
+        .pillar-card p {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-bottom: 0;
+        }
+
+        /* Sessão 3: Cursos Técnicos */
+        .courses-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .course-card {
+            background: var(--bg-white);
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+            transition: transform 0.3s, box-shadow 0.3s;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .course-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 12px 28px rgba(15, 61, 46, 0.1);
+        }
+
+        .course-img {
+            width: 100%;
+            height: 190px;
+            object-fit: cover;
+        }
+
+        .course-info {
+            padding: 1.5rem;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .course-tag {
+            font-size: 0.72rem;
+            color: var(--primary);
+            background: rgba(15, 61, 46, 0.08);
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-weight: 700;
+            text-transform: uppercase;
+            align-self: flex-start;
+        }
+
+        .course-info h3 {
+            margin: 0.7rem 0 0.5rem;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-size: 1.25rem;
+            color: var(--text-dark);
+        }
+
+        .course-info p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin-bottom: 1.5rem;
+            flex: 1;
+        }
+
+        .details-btn {
+            background: transparent;
+            color: var(--primary);
+            border: 1.5px solid var(--primary);
+            padding: 9px 16px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 0.85rem;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            transition: 0.25s;
+        }
+
+        .details-btn:hover {
+            background: var(--primary);
+            color: #fff;
+        }
+
+        /* Sessão 4: Infraestrutura & Galeria */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .gallery-item {
+            position: relative;
+            border-radius: 12px;
+            overflow: hidden;
+            cursor: pointer;
+            aspect-ratio: 4/3;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.07);
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(15, 61, 46, 0.9), transparent 60%);
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 1.3rem;
+            color: #fff;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .gallery-item:hover .gallery-overlay {
+            opacity: 1;
+        }
+
+        .gallery-overlay h4 {
+            font-size: 1rem;
+            font-weight: 700;
+        }
+
+        .gallery-overlay span {
+            font-size: 0.8rem;
+            color: var(--accent);
+        }
+
+        /* Sessão 5: Contato */
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1.1fr;
+            gap: 3rem;
+            background: var(--bg-white);
+            padding: 3rem;
+            border-radius: 16px;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+        }
+
+        .contact-info-list {
+            display: flex;
+            flex-direction: column;
+            gap: 1.2rem;
+            margin-top: 1.5rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 1.1rem;
+            background: var(--bg-light);
+            padding: 1.1rem;
+            border-radius: 10px;
+            text-decoration: none;
+            color: var(--text-dark);
+            border: 1px solid var(--border-color);
+            transition: 0.25s;
+        }
+
+        .contact-item:hover {
+            border-color: var(--primary);
+            background: #f0fdf4;
+            transform: translateX(4px);
+        }
+
+        .contact-icon {
+            width: 48px;
+            height: 48px;
+            background: var(--primary);
+            color: #fff;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.25rem;
+            flex-shrink: 0;
+        }
+
+        .contact-details h4 {
+            font-size: 0.78rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .contact-details p {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--text-dark);
+        }
+
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: 1.1rem;
+        }
+
+        .contact-form h3 {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-size: 1.3rem;
+            color: var(--primary);
+        }
+
+        .form-group input, .form-group select, .form-group textarea {
+            width: 100%;
+            padding: 13px 15px;
+            background: var(--bg-light);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            color: var(--text-dark);
+            font-family: inherit;
+            font-size: 0.92rem;
+            outline: none;
+            transition: border-color 0.25s, background 0.25s;
+        }
+
+        .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+            border-color: var(--primary);
+            background: #fff;
+        }
+
+        /* Modal / Lightbox */
+        .modal {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(15, 23, 42, 0.9);
+            z-index: 2000;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem;
+        }
+
+        .modal img {
+            max-width: 90%;
+            max-height: 85vh;
+            border-radius: 12px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            font-size: 2.5rem;
+            color: #fff;
+            cursor: pointer;
+        }
+
+        /* Notificação Toast */
+        #toast {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: var(--primary);
+            color: #fff;
+            padding: 15px 24px;
+            border-radius: 8px;
+            border-left: 4px solid var(--accent);
+            font-weight: 600;
+            font-size: 0.9rem;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+            transform: translateY(150%);
+            transition: transform 0.35s ease;
+            z-index: 3000;
+            max-width: 380px;
+        }
+
+        #toast.show {
+            transform: translateY(0);
+        }
+
+        footer {
+            background: var(--primary);
+            color: rgba(255, 255, 255, 0.85);
+            text-align: center;
+            padding: 2.5rem 8%;
+            font-size: 0.88rem;
+        }
+
+        footer p + p {
+            margin-top: 0.4rem;
+            font-size: 0.8rem;
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        /* Responsividade */
+        @media (max-width: 960px) {
+            #inicio {
+                flex-direction: column;
+                padding-top: 3rem;
+            }
+            .hero-text h2 {
+                font-size: 2.3rem;
+            }
+            .hero-card-float {
+                position: static;
+                margin-top: 1rem;
+            }
+            .about-grid, .contact-container {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            section {
+                padding: 4rem 5%;
+            }
+            .contact-container {
+                padding: 1.5rem;
+                gap: 2rem;
+            }
+            .contact-item {
+                padding: 0.9rem;
+                gap: 0.85rem;
+            }
+            .contact-details p {
+                font-size: 0.9rem;
+            }
+            .top-bar {
+                display: none;
+            }
+            .menu-toggle {
+                display: block;
+            }
+            nav ul {
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background: var(--bg-white);
+                flex-direction: column;
+                padding: 1.5rem 8%;
+                gap: 1.2rem;
+                display: none;
+                border-bottom: 1px solid var(--border-color);
+                box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+            }
+            nav ul.active {
+                display: flex;
+            }
+            .pillars-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Barra Institucional Superior -->
+    <div class="top-bar">
+        <span><i class="fas fa-landmark"></i> Governo do Estado do Ceará • Secretaria da Educação (SEDUC)</span>
+        <span><i class="fas fa-clock"></i> Ensino Médio Integrado à Educação Profissional</span>
+    </div>
+
+    <!-- Cabeçalho / Navegação -->
+    <header>
+        <a href="#inicio" class="logo">
+            <div class="logo-icon"><i class="fas fa-graduation-cap"></i></div>
+            <div class="logo-text">
+                <h1>EEEP Elsa Maria</h1>
+                <span>Porto Costa Lima • Aracati - CE</span>
+            </div>
+        </a>
+        <div class="menu-toggle" id="mobile-menu">
+            <i class="fas fa-bars"></i>
+        </div>
+        <nav>
+            <ul id="nav-list">
+                <li><a href="#inicio" class="nav-link active">Início</a></li>
+                <li><a href="#sobre" class="nav-link">A Escola</a></li>
+                <li><a href="#cursos" class="nav-link">Cursos Técnicos</a></li>
+                <li><a href="#estrutura" class="nav-link">Estrutura</a></li>
+                <li><a href="#contato" class="nav-link">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Sessão 1: Início -->
+    <section id="inicio">
+        <div class="hero-text">
+            <div class="badge"><i class="fas fa-award"></i> Excelência no Ensino Público Profissional</div>
+            <h2>EEEP <span>Elsa Maria</span> Porto Costa Lima</h2>
+            <p>Formando cidadãos protagonistas e profissionais qualificados através do Ensino Médio em Tempo Integral aliado à formação técnica de excelência no Litoral Leste do Ceará.</p>
+            <div class="btn-group">
+                <a href="#cursos" class="btn btn-primary"><i class="fas fa-book-open"></i> Conheça os Cursos</a>
+                <a href="#contato" class="btn btn-outline"><i class="fas fa-envelope"></i> Fale com a Secretaria</a>
+            </div>
+        </div>
+        <div class="hero-image">
+            <div class="hero-card-float">
+                <i class="fas fa-user-graduate"></i>
+                <div>
+                    <strong style="display:block; color: var(--primary); font-size: 0.95rem;">Formação Integral + Estágio</strong>
+                    <span style="font-size: 0.8rem; color: var(--text-muted);">Preparação para o ENEM e Mercado</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sessão 2: A Escola -->
+    <section id="sobre">
+        <div class="section-header">
+            <p class="section-subtitle">Identidade Institucional</p>
+            <h2 class="section-title">SOBRE A NOSSA ESCOLA</h2>
+        </div>
+        <div class="about-grid">
+            <div class="about-img">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRcRD9zv6M8Cu5Yoi0axxLXG0qkFztBhjfw1YZz9LGxscZFwWtJ2sM6xKE&s=10" alt="Campus Escolar">
+            </div>
+            <div class="about-content">
+                <p>
+                    A <strong>Escola Estadual de Educação Profissional (EEEP) Elsa Maria Porto Costa Lima</strong>, vinculada à CREDE 10 (Secretaria da Educação do Estado do Ceará), é referência regional na formação de jovens em tempo integral.
+                </p>
+                <p>
+                    Nosso modelo pedagógico integra o currículo da Base Nacional Comum Curricular (BNCC) com cursos técnicos de nível médio, projeto de vida, protagonismo juvenil e estágio curricular supervisionado remunerado no 3º ano.
+                </p>
+                <div class="pillars-grid">
+                    <div class="pillar-card">
+                        <h4><i class="fas fa-bullseye"></i> Missão</h4>
+                        <p>Garantir educação pública de qualidade, formando jovens autônomos, solidários e competentes.</p>
+                    </div>
+                    <div class="pillar-card">
+                        <h4><i class="fas fa-briefcase"></i> Estágio Garantido</h4>
+                        <p>Parcerias com empresas locais e regionais para inserção imediata no mundo do trabalho.</p>
+                    </div>
+                    <div class="pillar-card">
+                        <h4><i class="fas fa-university"></i> Foco Acadêmico</h4>
+                        <p>Preparação intensiva para o ENEM, vestibulares e olimpíadas científicas nacionais.</p>
+                    </div>
+                    <div class="pillar-card">
+                        <h4><i class="fas fa-users"></i> Protagonismo</h4>
+                        <p>Incentivo à pesquisa científica, liderança estudantil, cultura e práticas esportivas.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sessão 3: Cursos Técnicos -->
+    <section id="cursos">
+        <div class="section-header">
+            <p class="section-subtitle">Qualificação Profissional</p>
+            <h2 class="section-title">CURSOS TÉCNICOS INTEGRADOS</h2>
+        </div>
+        <div class="courses-grid">
+            <div class="course-card">
+                <div class="course-info">
+                    <span class="course-tag">Eixo Informação e Comunicação</span>
+                    <h3>Técnico em Informática</h3>
+                    <p>Desenvolvimento de sistemas web e mobile, lógica de programação, banco de dados, redes de computadores e manutenção de hardware.</p>
+                    <button class="details-btn" onclick="showCourseInfo('Técnico em Informática: Duração de 3 anos + Estágio Supervisionado no 3º ano.')">
+                        <i class="fas fa-info-circle"></i> Matriz Curricular
+                    </button>
+                </div>
+            </div>
+
+            <div class="course-card">
+                <div class="course-info">
+                    <span class="course-tag">Eixo Gestão e Negócios</span>
+                    <h3>Técnico em Administração</h3>
+                    <p>Gestão empresarial, empreendedorismo, recursos humanos, finanças, marketing, logística e rotinas administrativas modernas.</p>
+                    <button class="details-btn" onclick="showCourseInfo('Técnico em Administração: Duração de 3 anos + Estágio Supervisionado no 3º ano.')">
+                        <i class="fas fa-info-circle"></i> Matriz Curricular
+                    </button>
+                </div>
+            </div>
+
+            <div class="course-card">
+                <div class="course-info">
+                    <span class="course-tag">Eixo Ambiente e Saúde</span>
+                    <h3>Técnico em Enfermagem</h3>
+                    <p>Cuidados integrais à saúde, anatomia, biossegurança, atendimento clínico, saúde coletiva e práticas em unidades hospitalares.</p>
+                    <button class="details-btn" onclick="showCourseInfo('Técnico em Enfermagem: Duração de 3 anos + Práticas Clínicas e Estágio Hospitalar.')">
+                        <i class="fas fa-info-circle"></i> Matriz Curricular
+                    </button>
+                </div>
+            </div>
+
+            <div class="course-card">
+                <div class="course-info">
+                    <span class="course-tag">Eixo Turismo e Hospitalidade</span>
+                    <h3>Técnico em Hospedagem</h3>
+                    <p>Gestão hoteleira, governança, recepção, organização de eventos, idiomas aplicados e atendimento ao turista nacional e internacional.</p>
+                    <button class="details-btn" onclick="showCourseInfo('Técnico em Hospedagem: Duração de 3 anos + Estágio na Rede Hoteleira Regional.')">
+                        <i class="fas fa-info-circle"></i> Matriz Curricular
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sessão 5: Contato -->
+    <section id="contato">
+        <div class="section-header">
+            <p class="section-subtitle">Atendimento à Comunidade</p>
+            <h2 class="section-title">ENTRE EM CONTATO</h2>
+        </div>
+        <div class="contact-container">
+            <div>
+                <h3 style="font-family: 'Plus Jakarta Sans', sans-serif; color: var(--primary); font-size: 1.35rem;">Canais Oficiais da Instituição</h3>
+                <p style="color: var(--text-muted); margin-top: 0.5rem; font-size: 0.95rem;">
+                    Para informações sobre processos seletivos de novos alunos, parcerias de estágio, emissão de documentos ou atendimento pedagógico:
+                </p>
+                <div class="contact-info-list">
+                    <a href="https://www.instagram.com/epelsaportoaracati/" target="_blank" class="contact-item">
+                        <div class="contact-icon"><i class="fab fa-instagram"></i></div>
+                        <div class="contact-details">
+                            <h4>Instagram Oficial</h4>
+                            <p>@epelsaportoaracati</p>
+                        </div>
+                    </a>
+
+                    <a href="mailto:eparacati@escola.ce.gov.br" class="contact-item">
+                        <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+                        <div class="contact-details">
+                            <h4>E-mail Institucional</h4>
+                            <p>eparacati@escola.ce.gov.br</p>
+                        </div>
+                    </a>
+
+                    <a href="tel:+558834212194" class="contact-item">
+                        <div class="contact-icon"><i class="fas fa-phone-alt"></i></div>
+                        <div class="contact-details">
+                            <h4>Telefone / Secretaria</h4>
+                            <p>(88) 3421-2194</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <form class="contact-form" id="contactForm">
+                <h3>Envie uma Mensagem</h3>
+                <div class="form-group">
+                    <input type="text" id="nome" placeholder="Nome Completo" required>
+                </div>
+                <div class="form-group">
+                    <input type="email" id="email" placeholder="Seu E-mail" required>
+                </div>
+                <div class="form-group">
+                    <select id="assunto" required>
+                        <option value="" disabled selected>Selecione o Assunto</option>
+                        <option value="Matrículas e Seleção">Matrículas / Processo Seletivo</option>
+                        <option value="Parceria de Estágio">Empresa Parceira / Estágio</option>
+                        <option value="Secretaria Escolar">Secretaria / Documentação</option>
+                        <option value="Outros">Outros Assuntos</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <textarea id="mensagem" rows="4" placeholder="Escreva sua mensagem para a gestão escolar..." required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary" style="justify-content: center;">
+                    Enviar Solicitação <i class="fas fa-paper-plane"></i>
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Modal de Imagem -->
+    <div class="modal" id="imageModal" onclick="closeModal()">
+        <span class="close-modal">&times;</span>
+        <img id="modalImg" src="" alt="Visualização Ampliada">
+    </div>
+
+    <!-- Toast Notification -->
+    <div id="toast"></div>
+
+    <footer>
+        <p><strong>EEEP Elsa Maria Porto Costa Lima</strong> • Secretaria da Educação do Estado do Ceará (SEDUC / CREDE 10)</p>
+        <p>&copy; 2026 Todos os direitos reservados. Educação Profissional e Tecnológica de Qualidade.</p>
+    </footer>
+
+    <script>
+        // Menu Mobile
+        const mobileMenu = document.getElementById('mobile-menu');
+        const navList = document.getElementById('nav-list');
+
+        mobileMenu.addEventListener('click', () => {
+            navList.classList.toggle('active');
+        });
+
+        // Destacar link ativo na navegação ao rolar as sessões
+        const sections = document.querySelectorAll('section');
+        const navLinks = document.querySelectorAll('.nav-link');
+
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (pageYOffset >= (sectionTop - sectionHeight / 3)) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href').includes(current)) {
+                    link.classList.add('active');
+                }
+            });
+        });
+
+        // Fechar menu mobile ao clicar em um link
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                navList.classList.remove('active');
+            });
+        });
+
+        // Notificação Toast
+        function showToast(message) {
+            const toast = document.getElementById('toast');
+            toast.textContent = message;
+            toast.classList.add('show');
+            setTimeout(() => {
+                toast.classList.remove('show');
+            }, 4000);
+        }
+
+        // Informações dos Cursos
+        function showCourseInfo(info) {
+            showToast(`📚 ${info}`);
+        }
+
+        // Lightbox da Galeria
+        function openModal(element) {
+            const imgSrc = element.querySelector('img').src;
+            document.getElementById('modalImg').src = imgSrc;
+            document.getElementById('imageModal').style.display = 'flex';
+        }
+
+        function closeModal() {
+            document.getElementById('imageModal').style.display = 'none';
+        }
+
+        // Envio do Formulário de Contato
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const nome = document.getElementById('nome').value;
+            const assunto = document.getElementById('assunto').value;
+            showToast(`Olá, ${nome}! Sua mensagem sobre "${assunto}" foi encaminhada à secretaria da EEEP Elsa Maria.`);
+            this.reset();
+        });
+    </script>
+</body>
+</html>
